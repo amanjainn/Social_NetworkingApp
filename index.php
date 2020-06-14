@@ -4,7 +4,7 @@ $con = mysqli_connect("localhost","root","","bmsce_talks");
 if(mysqli_connect_errno()){
     echo "Failed to connect " . mysqli_connect_errno();
 }
-$query= mysqli_query($con,"INSERT INTO test2 VALUES (NULL,'aman')")
+")
 
 
 ?>
