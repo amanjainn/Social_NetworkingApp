@@ -114,8 +114,7 @@ if(!isset($_SESSION['user_email'])){
    ?>
 
     <div class="col-sm-8">
-          <center><h1><strong><?php echo "$f_name $l_name";?></strong>Posts</h1></center>
-
+          <center><h1><strong><?php echo "$f_name $l_name ";?></strong>Posts</h1></center>  
           <?php
             global $con;
 
@@ -253,14 +252,23 @@ if(!isset($_SESSION['user_email'])){
 
             }
 
-
-            ?>
-
-        </div>
-      </div>
-        </div>
-<?php } ?>
-      
-
+            } 
+            ?>       
+</div>
+  
+</div>
+<?php }?>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
