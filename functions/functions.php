@@ -343,15 +343,41 @@ function get_posts(){
 					";
 				}
 
-				include("commmet.php")
+				include("comment.php")
 
 				echo"
 				<div class='row'>
 					<div class='col-md-6 col-md-offset-3'>
-
+						<div class='panel panel-info'>
+							<div class='panel-body'>
+								<form action='' method='post class='form-inline'>
+									<textarea placeholder='Write your comment here!'
+									class='pb-cmnt-textarea' name='comment'>
+									</textarea>
+									<button class ='btn btn-info pull-right'
+									name='reply'>Comment</button>
+								</form>
+							</div>
+						</div>
 				   </div>
 				</div>
 				";
+
+				if(isset($_POST['reply'])){
+					$comment = htmlentities($_POST['comment'])
+				
+					 if($comment == ""){
+						 echo "<script>alert('Enter your comment')</script>"
+						 echo "<script>window.open('single.php?post_id=$post_id','_self')</script>";
+					 }else{
+						 $insert="insert into comments (post_id,user_id,comment,comment_author,date) values('$post_id',
+						 '$user_id','4
+						 
+						 "
+					 }
+				
+				
+				}
 
 
 
