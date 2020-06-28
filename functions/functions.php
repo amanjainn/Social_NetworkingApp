@@ -275,7 +275,7 @@ function get_posts(){
 									<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
 								</div>
 							</div><br>
-							<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+					
 						</div>
 						<div class='col-sm-3'>
 						</div>
@@ -306,7 +306,7 @@ function get_posts(){
 									<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
 								</div>
 							</div><br>
-							<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+					
 						</div>
 						<div class='col-sm-3'>
 						</div>
@@ -336,7 +336,6 @@ function get_posts(){
 									<h3><p>$content</p></h3>
 								</div>
 							</div><br>
-							<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
 						</div>
 						<div class='col-sm-3'>
 						</div>
@@ -389,6 +388,47 @@ function get_posts(){
 
 
 
+	   }
+
+	   function search_user(){
+		   global $con;
+
+		   if(isset($_GET['search_user_btn'])){
+			   $search_query =htmlentities($_GET['search_btn']);
+			   $get_user ="select * from users where f_name like '%$search_query%' OR l_name like '%$search_query%'
+			   OR user_name like '%search_query%'";
+		   }else{
+			   $get_user="select * form  users";
+		   }
+		   $run_user =mysqli_query($con,$get_user);
+		   while($row_user ==mysqli_fetch_array($run_user)){
+			   $user_id =$row_user['user_id'];
+			   $f_name =$row_user['f_name'];
+			   $l_name =$row_user['l_name'];
+			   $username =$row['user_name'];
+			   $user_image =$row['user_image'];
+
+
+				echo"
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+				<div class ='col-sm-6'>
+					<div class='row' id='find_people'>
+					<div class='col-sm-4
+					</div>
+				</div>
+
+
+
+			</div>
+
+				</div>
+
+				";
+
+
+		   }
 	   }
    
 

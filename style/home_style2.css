@@ -44,3 +44,14 @@ input[type="file"]{
 	border: 5px solid #e6e6e6;
 	padding: 40px 50px;
 }
+
+.pb-cmnt-container{
+	margin-top:100px;
+}
+.pb-cmnt-textarea{
+	resize: none;
+	padding: 20px;
+	height:110px;
+	width: 100%;
+	border: 1px solid #F2F2F2;
+}

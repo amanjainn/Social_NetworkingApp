@@ -10,7 +10,7 @@
  while($row =mysqli_fetch_array($run_com)){
      $com= $row['comment'];
      $com_name=$row['comment_author'];
-     $date=$row=['date'];
+     $date=$row['date'];
 
     echo"
     <div class='row'>
@@ -18,7 +18,7 @@
             <div class='panel panel-info'>
                 <div class ='panel-body'>
                 <div>
-                <h4><strong>$com_name</strong><i>commented<i> on $date</h4>
+                <h4><strong>$com_name</strong><i> commented<i> on $date</h4>
                 <p class='text-primary' style='margin-left:5px;font-size:20px;'>$com</p>
                 </div>
                 </div>
