@@ -234,11 +234,134 @@ function get_posts(){
 			$user_com_id=$row_com['user_id'];
 			$user_com_name=$row_com['user_name'];
 
-			
-			
+			if(isset($_GET['post_id'])){
+				$post_id =$_GET['post_id'];
+			}
+
+			$get_posts ="select post_id from users where post_id ='$post_id'";
+			$run_user=mysqli_query($con,$get_posts);
+
+			$post_id =$_GET['post_id'];
+			$get_user ="select * from the posts where post_id='$post'";
+			$run_user =mysqli_query($con,$get_user);
+			$row=mysqli_fetch_array($run_user);
+
+			$p_id = $row['post_id'];
+
+			if($p_id!=$post_id){
+				echo "<script> alert('ERROR')</script>";
+				echo "<script>window.open('home.php','_self')</script>";
+			}else{
+				if($content=="No" && strlen($upload_image) >= 1){
+					echo"
+					<div class='row'>
+						<div class='col-sm-3'>
+						</div>
+						<div id='posts' class='col-sm-6'>
+							<div class='row'>
+								<div class='col-sm-2'>
+								<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+								</div>
+								<div class='col-sm-6'>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+								</div>
+								<div class='col-sm-4'>
+								</div>
+							</div>
+							<div class='row'>
+								<div class='col-sm-12'>
+									<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
+								</div>
+							</div><br>
+							<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+						</div>
+						<div class='col-sm-3'>
+						</div>
+					</div><br><br>
+					";
+				}
+		
+				else if(strlen($content) >= 1 && strlen($upload_image) >= 1){
+					echo"
+					<div class='row'>
+						<div class='col-sm-3'>
+						</div>
+						<div id='posts' class='col-sm-6'>
+							<div class='row'>
+								<div class='col-sm-2'>
+								<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+								</div>
+								<div class='col-sm-6'>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+								</div>
+								<div class='col-sm-4'>
+								</div>
+							</div>
+							<div class='row'>
+								<div class='col-sm-12'>
+									<p>$content</p>
+									<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
+								</div>
+							</div><br>
+							<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+						</div>
+						<div class='col-sm-3'>
+						</div>
+					</div><br><br>
+					";
+				}
+		
+				else{
+					echo"
+					<div class='row'>
+						<div class='col-sm-3'>
+						</div>
+						<div id='posts' class='col-sm-6'>
+							<div class='row'>
+								<div class='col-sm-2'>
+								<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+								</div>
+								<div class='col-sm-6'>
+									<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
+									<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
+								</div>
+								<div class='col-sm-4'>
+								</div>
+							</div>
+							<div class='row'>
+								<div class='col-sm-12'>
+									<h3><p>$content</p></h3>
+								</div>
+							</div><br>
+							<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
+						</div>
+						<div class='col-sm-3'>
+						</div>
+					</div><br><br>
+					";
+				}
+
+				include("commmet.php")
+
+				echo"
+				<div class='row'>
+					<div class='col-md-6 col-md-offset-3'>
+
+				   </div>
+				</div>
+				";
+
+
+
+			}	
+			}
+
+
 
 	   }
-   }
+   
 
 
 
