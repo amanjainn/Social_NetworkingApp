@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <?php
 
 $con = mysqli_connect("localhost","root","","bmsce_connections") or die("Connection was not established");
@@ -253,6 +261,11 @@ function get_posts(){
 				echo "<script> alert('ERROR')</script>";
 				echo "<script>window.open('home.php','_self')</script>";
 			}else{
+
+					
+
+
+
 				if($content=="No" && strlen($upload_image) >= 1){
 					echo"
 					<div class='row'>
@@ -394,7 +407,7 @@ function get_posts(){
 		   global $con;
 
 		   if(isset($_GET['search_user_btn'])){
-			   $search_query =htmlentities($_GET['search_user']);
+			   $search_query =htmlentities($_GET['search_btn']);
 			   $get_user ="select * from users where f_name like '%$search_query%' OR l_name like '%$search_query%'
 			   OR user_name like '%search_query%'";
 		   }else{
@@ -417,7 +430,7 @@ function get_posts(){
 					<div class='row' id='find_people'>
 					<div class='col-sm-4'>
 					 <a href='user_profile.php?u_id=$user_id'>
-					 	<img src='user/$user_image' width='150px' height='140px' title='$username' style='float:left; ,margin:1px; '/>
+					 	<img src='users/$user_image' width='150px' height='140px' title='$username' style='float:left; ,margin:1px; '/>
 					</div><br><br>
 				</div>
 				<div class='col-sm-6'>
