@@ -3,7 +3,7 @@
 
  $get_id =$_GET['post_id'];
 
- $get_com="select * from the comments where post_id='$get_id' ORDER BY 1 desc";
+ $get_com="select * from  comments where post_id='$get_id' ORDER BY 1 desc";
 
  $run_com = mysqli_query($con,$get_com);
 
@@ -13,7 +13,7 @@
      $date=$row=['date'];
 
     echo"
-    <div class="row">
+    <div class='row'>
       <div class='col-md-6 col-md-offset-3'>
             <div class='panel panel-info'>
                 <div class ='panel-body'>

@@ -226,7 +226,7 @@ function get_posts(){
 			$user_com=$_SESSION['user_email'];
 
 
-			$get_com="select * from the users where user_email='$user_com'";
+			$get_com="select * from  users where user_email='$user_com'";
 			$run_com=mysqli_query($con,$get_com);
 			$row_com=mysqli_fetch_array($run_com);
 
@@ -243,7 +243,7 @@ function get_posts(){
 
 			$post_id =$_GET['post_id'];
 			$post=$_GET['post_id'];
-			$get_user ="select * from the posts where post_id='$post'";
+			$get_user ="select * from posts where post_id='$post'";
 			$run_user =mysqli_query($con,$get_user);
 			$row=mysqli_fetch_array($run_user);
 
@@ -344,15 +344,15 @@ function get_posts(){
 					";
 				}
 
-				//include("comments.php")
+				include("comments.php");
 
 				echo"
 				<div class='row'>
 					<div class='col-md-6 col-md-offset-3'>
 						<div class='panel panel-info'>
 							<div class='panel-body'>
-								<form action='' method='post class='form-inline'>
-									<textarea placeholder='Write your comment here!'
+								<form action='' method='post' class='form-inline'>
+									<textarea 
 									class='pb-cmnt-textarea' name='comment'>
 									</textarea>
 									<button class ='btn btn-info pull-right'
@@ -362,11 +362,12 @@ function get_posts(){
 						</div>
 				   </div>
 				</div>
-				";
 
+				";
+			
 				if(isset($_POST['reply'])){
 					$comment = htmlentities($_POST['comment']);
-				
+					
 					 if($comment == ""){
 						 echo "<script>alert('Enter your comment')</script>";
 						 echo "<script>window.open('single.php?post_id=$post_id','_self')</script>";
