@@ -10,6 +10,7 @@
 <body>
  <!-- Header -->
  
+</div>
 <div class="row">
 	<div class="col-sm-12">
 		<div class="main-content">
@@ -26,6 +27,10 @@
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
 						<input type="text" class="form-control" placeholder="Last Name" name="last_name" required="required">
+					</div><br>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+						<input type="text" class="form-control" placeholder="Semester" name="sem" required="required">
 					</div><br>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
