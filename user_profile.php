@@ -18,6 +18,34 @@ if(!isset($_SESSION['user_email'])){
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
+<style>
+ #own_posts{
+    border: 5px solid #e6e6e6;
+    padding: 40px 50px;
+    width: 904;
+
+ }
+
+ #posts_img{
+     height:300px;
+     width: 100%;
+ }
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <body>
 <div class="row">
@@ -233,17 +261,18 @@ if(!isset($_SESSION['user_email'])){
                          <h4><small style ='color: black;'>Updated a post on <strong> $post_date</strong></small></h4>
             
                          </div>
-                         <div class ='col-sm-4'>
+                         <div class ='col-sm-3'>
                          </div>
                          </div>
                         <div class='row'>
-                           <div class ='col-sm-6'>
+                           <div class ='col-sm-12'>
                           <h3> <p>$content</p> </h3>
                            </div>
-                           <div class='col-sm-4'>
-                           </div>
+                        
             
-            
+              </div><br>
+              <a href='single.php?post_id=$post_id' style='float:right';>
+              <button class='btn btn-info'>Comment</button></a><br>
                        </div><br><br>
             
                          ";
