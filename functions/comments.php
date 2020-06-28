@@ -14,6 +14,17 @@
 
     echo"
     <div class="row">
+      <div class='col-md-6 col-md-offset-3'>
+            <div class='panel panel-info'>
+                <div class ='panel-body'>
+                <div>
+                <h4><strong>$com_name</strong><i>commented<i> on $date</h4>
+                <p class='text-primary' style='margin-left:5px;font-size:20px;'>$com</p>
+                </div>
+                </div>
+          
+          </div>
+          </div>
     </div>
   ";
 

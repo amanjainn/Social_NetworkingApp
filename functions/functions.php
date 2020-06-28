@@ -242,6 +242,7 @@ function get_posts(){
 			$run_user=mysqli_query($con,$get_posts);
 
 			$post_id =$_GET['post_id'];
+			$post=$_GET['post_id'];
 			$get_user ="select * from the posts where post_id='$post'";
 			$run_user =mysqli_query($con,$get_user);
 			$row=mysqli_fetch_array($run_user);
