@@ -226,9 +226,9 @@ function get_posts(){
 			$user_com=$_SESSION['user_email'];
 
 
-			$get_com="select * from the users where user_email='$user_email'";
+			$get_com="select * from the users where user_email='$user_com'";
 			$run_com=mysqli_query($con,$get_com);
-			$row_com=mysqli_fetcg_array($run_com);
+			$row_com=mysqli_fetch_array($run_com);
 
 
 			$user_com_id=$row_com['user_id'];
@@ -343,7 +343,7 @@ function get_posts(){
 					";
 				}
 
-				include("comment.php")
+				//include("comments.php")
 
 				echo"
 				<div class='row'>
@@ -364,16 +364,17 @@ function get_posts(){
 				";
 
 				if(isset($_POST['reply'])){
-					$comment = htmlentities($_POST['comment'])
+					$comment = htmlentities($_POST['comment']);
 				
 					 if($comment == ""){
-						 echo "<script>alert('Enter your comment')</script>"
+						 echo "<script>alert('Enter your comment')</script>";
 						 echo "<script>window.open('single.php?post_id=$post_id','_self')</script>";
 					 }else{
 						 $insert="insert into comments (post_id,user_id,comment,comment_author,date) values('$post_id',
-						 '$user_id','4
-						 
-						 "
+						 '$user_id','$comment','$user_com_name',NOW())";						 
+						 $run=mysqli_query($con,$insert);
+						 echo "<script>alert('Your comment has been added')</script>";
+						 echo "<script>window.open('single.php?post_id=$post_id','_self')</script>";
 					 }
 				
 				
