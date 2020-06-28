@@ -26,7 +26,7 @@ if(!isset($_SESSION['user_email'])){
         </div>
         <div class="col-sm-4">
             <form class="search_form" action="">
-                  <input type="text" placeholder="Search Friend" name="searh_user">
+                  <input type="text" placeholder="Search Friend" name="search_user">
                   <button class="btn btn-info" type="submit" name="search_user_btn">
                       Search </button>
 </form>
